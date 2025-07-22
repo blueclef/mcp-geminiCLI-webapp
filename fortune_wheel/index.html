@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Wheel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fortune Wheel</h1>
+        <canvas id="wheelCanvas" width="500" height="500"></canvas>
+        <div class="controls">
+            <button id="spinButton">시작</button>
+            <button id="stopButton">정지</button>
+        </div>
+        <div class="result">
+            <p>결과: <span id="resultText"></span></p>
+        </div>
+
+        <div class="sector-management">
+            <h2>섹터 관리</h2>
+            <div id="sectorList">
+                <!-- Sectors will be listed here by JavaScript -->
+            </div>
+            <div class="add-sector">
+                <input type="text" id="newSectorName" placeholder="섹터 이름">
+                <input type="number" id="newSectorWeight" placeholder="비율 (%)" min="1" max="100">
+                <input type="color" id="newSectorColor" value="#FF0000">
+                <button id="addSectorButton">섹터 추가</button>
+            </div>
+            <button id="resetSectorsButton">기본 섹터로 재설정</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

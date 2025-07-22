@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Todo Calendar</h1>
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <h2 id="month-year"></h2>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div class="days">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+            </div>
+            <div class="dates" id="dates"></div>
+        </div>
+        <div class="todo">
+            <h3>To do List</h3>
+            <ul id="todo-list"></ul>
+            <input type="text" id="todo-input" placeholder="Add a new todo">
+            <button id="add-todo">Add</button>
+        </div>
+        <div class="copy-todos">
+            <h3>Copy Todos</h3>
+            <input type="date" id="copy-date-input">
+            <button id="copy-button">Copy Selected Day's Todos</button>
+            <button id="copy-weekly-button">Copy Weekly from Selected Day</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
