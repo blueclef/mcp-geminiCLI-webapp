@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포모도로 타이머</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="timer-container">
+        <div id="quote-container">
+            <p id="quote-text"></p>
+            <p id="quote-source"></p>
+        </div>
+
+        <!-- Digital Timer View -->
+        <div id="digital-view">
+            <div id="timer">25:00</div>
+        </div>
+
+        <!-- Analog Timer View -->
+        <div id="analog-view" class="hidden">
+            <svg id="analog-clock" width="200" height="200" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="#e0e0e0" stroke-width="20"/>
+                <path id="progress-arc" fill="none" stroke="#4A90E2" stroke-width="20"/>
+                <line id="needle" x1="100" y1="100" x2="100" y2="20" stroke="#333" stroke-width="4" transform="rotate(0 100 100)"/>
+            </svg>
+        </div>
+
+        <div id="controls">
+            <button id="start">시작</button>
+            <button id="pause">일시정지</button>
+            <button id="reset">초기화</button>
+            <button id="toggle-view">아날로그 보기</button>
+        </div>
+        <div id="cycle-info">
+            완료한 뽀모도로: <span id="cycle-count">0</span> / 3
+        </div>
+    </div>
+    <audio id="notification" src="data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjQ1LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAAZAAAAlpER5oAAANgA//tAwJAAAAAAAAAAAAAAO4AAABmZmZnaWxuZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2-lujAwAAAAAAAAAAAAAA//tAwJAAAAAAAAAAAAAAO4AAABmZmZnaWxuZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ2luZ...
+    <script src="script.js" defer></script>
+</body>
+</html>
