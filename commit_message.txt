@@ -1,1 +1,1 @@
-Add initial web application projects
+Update README.md with project descriptions
