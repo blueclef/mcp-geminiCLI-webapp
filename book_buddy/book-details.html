@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="book-details-container">
+        <!-- Book details will be populated here by JavaScript -->
+    </div>
+
+    <div id="edit-book-form-container" style="display:none;">
+        <h2>Edit Book</h2>
+        <form id="edit-book-form">
+            <label for="edit-title">Title:</label>
+            <input type="text" id="edit-title" required>
+
+            <label for="edit-author">Author:</label>
+            <input type="text" id="edit-author" required>
+
+            <label for="edit-publisher">Publisher:</label>
+            <input type="text" id="edit-publisher">
+
+            <label for="edit-publication-year">Publication Year:</label>
+            <input type="text" id="edit-publication-year">
+
+            <label for="edit-rating">Rating:</label>
+            <div id="edit-star-rating"></div>
+
+            <label for="edit-cover-image">Book Cover:</label>
+            <input type="file" id="edit-cover-image" accept="image/*">
+
+            <label for="edit-tags">Tags (comma-separated):</label>
+            <input type="text" id="edit-tags">
+
+            <button type="submit">Save Changes</button>
+            <button type="button" id="cancel-edit-btn">Cancel</button>
+        </form>
+    </div>
+
+    <div id="quote-management">
+        <h3>Add a Quote</h3>
+        <form id="add-quote-form">
+            <textarea id="quote-text" placeholder="Enter quote..." required></textarea>
+            <input type="number" id="page-number" placeholder="Page number">
+            <textarea id="personal-note" placeholder="Personal note (optional)"></textarea>
+            <button type="submit">Add Quote</button>
+        </form>
+
+        <h3>Quotes</h3>
+        <div id="quotes-list">
+            <!-- Quotes will be populated here by JavaScript -->
+        </div>
+    </div>
+
+    <button id="edit-book-btn">Edit Book</button>
+    <button type="button" id="delete-book-btn">Delete Book</button>
+
+    <script src="book-details.js"></script>
+</body>
+</html>

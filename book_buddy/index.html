@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Book Buddy</h1>
+
+    <div id="book-form-container">
+        <h2>Add a New Book</h2>
+        <form id="book-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" required>
+
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher">
+
+            <label for="publication-year">Publication Year:</label>
+            <input type="text" id="publication-year">
+
+            <label for="rating">Rating:</label>
+            <div id="star-rating"></div>
+
+            <label for="cover-image">Book Cover:</label>
+            <input type="file" id="cover-image" accept="image/*">
+
+            <label for="tags">Tags (comma-separated):</label>
+            <input type="text" id="tags">
+
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+
+    <div id="book-list-container">
+        <h2>My Books</h2>
+        <div id="book-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
